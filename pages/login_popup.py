@@ -15,7 +15,6 @@ class LoginPopup(BasePage):
     def click_open_login_popup(self):
         self.click(*self.OPEN_LOGIN_POPUP)
 
-
     def enter_username(self, username):
         self.send_keys(*self.USERNAME_FIELD, username)
 
