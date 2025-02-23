@@ -4,11 +4,11 @@ from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 
 class LoginPopup(BasePage):
-    # Pola i przyciski w popupie logowania
+
     USERNAME_FIELD = (By.ID, 'loginusername')
     PASSWORD_FIELD = (By.ID, 'loginpassword')
     LOGIN_BUTTON = (By.XPATH, "//*[@id='logInModal']/div/div/div[3]/button[2]")
-    CLOSE_BUTTON = (By.XPATH, "//button[@class='close']")  # Zmienna na przycisk zamknięcia popupu
+    CLOSE_BUTTON = (By.XPATH, "//button[@class='close']")
     OPEN_LOGIN_POPUP = (By.ID,"login2")
     WELCOME_USER_TITLE = (By.ID, "nameofuser")
 
