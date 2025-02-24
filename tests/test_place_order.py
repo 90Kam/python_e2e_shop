@@ -1,12 +1,14 @@
+import time
+
 import pytest
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from pages.login_popup import LoginPopup
-from test_login import test_login as TL
+from pages.item_category_page import PhonesCategoryPage, LaptopsCategoryPage, MonitorsCategoryPage
 
-def test_login(driver):
+def login_as_valid_user(driver):
     login_popup = LoginPopup(driver)
     login_popup.click_open_login_popup()
 
@@ -16,3 +18,7 @@ def test_login(driver):
     login_popup.enter_password("password")
     login_popup.click_login()
 
+def test_add_phone_to_cart(driver):
+    phones_page = PhonesCategoryPage(driver)
+    phones_page.click_open_phones_category()
+    time.sleep(5)
