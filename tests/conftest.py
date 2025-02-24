@@ -8,7 +8,7 @@ import os
 CHROMEDRIVER_PATH = os.path.join(os.getcwd(), 'drivers', 'chromedriver.exe')
 
 
-@pytest.fixture(scope="function")
+@pytest.fixture(scope="class")
 def driver():
 
     options = Options()
