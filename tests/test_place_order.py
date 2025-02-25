@@ -21,4 +21,3 @@ def login_as_valid_user(driver):
 def test_add_phone_to_cart(driver):
     phones_page = PhonesCategoryPage(driver)
     phones_page.click_open_phones_category()
-    time.sleep(5)
