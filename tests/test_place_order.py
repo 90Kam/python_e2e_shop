@@ -28,7 +28,8 @@ def logged_in_page(driver):
 def test_add_phone_to_cart(logged_in_page):
 
     phones_page = PhonesCategoryPage(logged_in_page)
-    phones_page.click_open_phones_category()
+    phones_page.open_phones_category()
+    phones_page.select_samsung_galaxy_s6()
 
     time.sleep(2)
     specific_phone_page = AddItemToCart(logged_in_page)
@@ -37,8 +38,8 @@ def test_add_phone_to_cart(logged_in_page):
 
     laptops_page = LaptopsCategoryPage(logged_in_page)
     time.sleep(2)
-    laptops_page.click_open_laptops_category()
-
+    laptops_page.open_laptops_category()
+    laptops_page.select_sony_vaio_i5()
     time.sleep(2)
     specific_laptop_page = AddItemToCart(logged_in_page)
     specific_laptop_page.add_item_to_cart()
