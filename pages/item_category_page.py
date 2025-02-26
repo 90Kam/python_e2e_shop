@@ -5,9 +5,10 @@ from pages.base_page import BasePage
 
 class PhonesCategoryPage(BasePage):
     CLICK_PHONES_CATEGORY = (By.LINK_TEXT, 'Phones')
-
+    CLICK_SAMSUNG_GALAXY_S6 = (By.LINK_TEXT,"Samsung galaxy s6")
     def click_open_phones_category(self):
         self.click(*self.CLICK_PHONES_CATEGORY)
+        self.click(*self.CLICK_SAMSUNG_GALAXY_S6)
 
 
 class LaptopsCategoryPage(BasePage):
