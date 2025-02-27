@@ -36,16 +36,27 @@ def test_add_phone_to_cart(logged_in_page):
     specific_phone_page.add_item_to_cart()
     specific_phone_page.return_to_homepage()
 
+
     laptops_page = LaptopsCategoryPage(logged_in_page)
     time.sleep(2)
     laptops_page.open_laptops_category()
     laptops_page.select_sony_vaio_i5()
+
     time.sleep(2)
     specific_laptop_page = AddItemToCart(logged_in_page)
     specific_laptop_page.add_item_to_cart()
     specific_laptop_page.return_to_homepage()
 
+    monitors_page = MonitorsCategoryPage(logged_in_page)
+    time.sleep(2)
+    monitors_page.open_monitors_category()
+    time.sleep(2)
+    monitors_page.select_asus_full_hd()
 
+    specific_monitor_page = AddItemToCart(logged_in_page)
+    time.sleep(2)
+    specific_monitor_page.add_item_to_cart()
+    specific_monitor_page.return_to_homepage()
 
     #specific_item_page.AddItemToCart(driver)
 

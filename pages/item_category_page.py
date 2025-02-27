@@ -27,6 +27,7 @@ class MonitorsCategoryPage(BasePage):
     CLICK_MONITORS_CATEGORY = (By.LINK_TEXT, "Monitors")
     CLICK_ASUS_FULL_HD = (By.LINK_TEXT, "ASUS Full HD")
 
-    def click_open_monitors_category(self):
+    def open_monitors_category(self):
         self.click(*self.CLICK_MONITORS_CATEGORY)
+    def select_asus_full_hd(self):
         self.click(*self.CLICK_ASUS_FULL_HD)
