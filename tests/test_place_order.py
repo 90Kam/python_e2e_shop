@@ -25,7 +25,8 @@ def logged_in_page(driver):
     time.sleep(5)
     return driver
 
-def test_add_phone_to_cart(logged_in_page):
+
+def test_add_item_to_cart(logged_in_page):
 
     phones_page = PhonesCategoryPage(logged_in_page)
     phones_page.open_phones_category()
