@@ -1,3 +1,8 @@
+from selenium.webdriver.common.alert import Alert
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import NoAlertPresentException, TimeoutException
+
 class BasePage:
     def __init__(self, driver):
         self.driver = driver
@@ -12,4 +17,12 @@ class BasePage:
         return self.find_element(by, value).click()
 
     def send_keys(self, by, value, text):
-       return self.find_element(by, value).send_keys(text)
+        return self.find_element(by, value).send_keys(text)
+
+    def accept_alert_if_present(self, timeout=3):
+        try:
+            WebDriverWait(self.driver, timeout).until(EC.alert_is_present())
+            Alert(self.driver).accept()
+            return True
+        except (NoAlertPresentException, TimeoutException):
+            return False
