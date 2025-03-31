@@ -19,6 +19,9 @@ class BasePage:
     def send_keys(self, by, value, text):
         return self.find_element(by, value).send_keys(text)
 
+    def save_text(self, by, value):
+        return self.find_element(by,value).text
+
     def accept_alert_if_present(self, timeout=3):
         try:
             WebDriverWait(self.driver, timeout).until(EC.alert_is_present())
