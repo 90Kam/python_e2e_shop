@@ -4,9 +4,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 import os
 
-
 CHROMEDRIVER_PATH = os.path.join(os.getcwd(), 'drivers', 'chromedriver.exe')
-
 
 @pytest.fixture(scope="class")
 def driver():
